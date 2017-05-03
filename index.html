@@ -20,8 +20,9 @@ circle {
 
 circle[status="ported"] { fill: #0f0; }
 circle[status="almost-ported"] { fill: #ff0; }
-circle[status="unported"] { fill: #f00; }
+circle[status="unported"] { fill: #a77; }
 circle[status="ready"] { fill: #00f; }
+circle[status="newly-ported"] { fill: #f0c; }
 
 circle, line {
   transition: opacity 0.15s;
@@ -113,8 +114,9 @@ circle, line {
 
 .status-filter .status.ported:before { border-color: #0f0; }
 .status-filter .status.almost-ported:before { border-color: #ff0; }
-.status-filter .status.unported:before { border-color: #f00; }
+.status-filter .status.unported:before { border-color: #a77; }
 .status-filter .status.ready:before { border-color: #00f; }
+.status-filter .status.newly-ported:before { border-color: #f0c; }
 
 .list-browser {
   margin: 0;
@@ -140,8 +142,9 @@ circle, line {
 
 .list-browser li[status="ported"]:before { background-color: #0f0; }
 .list-browser li[status="almost-ported"]:before { background-color: #ff0; }
-.list-browser li[status="unported"]:before { background-color: #f00; }
+.list-browser li[status="unported"]:before { background-color: #a77; }
 .list-browser li[status="ready"]:before { background-color: #00f; }
+.list-browser li[status="newly-ported"]:before { background-color: #f0c; }
 
 #hover {
   fill: #000;

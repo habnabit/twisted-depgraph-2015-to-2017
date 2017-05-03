@@ -107,6 +107,7 @@ d3.json('twisted-deps.json', function(error, depData) {
 
   var showStatuses = {
     'ported': false,
+    'newly-ported': true,
     'unported': true,
     'almost-ported': true,
     'ready': true,
@@ -131,7 +132,7 @@ d3.json('twisted-deps.json', function(error, depData) {
 
   var statusFilter = d3.select('body').append('ul').classed('status-filter', true)
     .selectAll('.statusButton')
-    .data(['ported', 'unported', 'almost-ported', 'ready'])
+    .data(['ported', 'unported', 'almost-ported', 'ready', 'newly-ported'])
     .enter()
       .append('li')
       .attr('class', f.ident)
@@ -417,7 +418,8 @@ d3.json('twisted-deps.json', function(error, depData) {
       }
       var ready = true;
       node.deps.forEach(function(subNode) {
-        ready = ready && graph.pkgs[subNode].status === 'ported';
+        var status = graph.pkgs[subNode].status;
+        ready = ready && (status === 'ported' || status === 'newly-ported');
       });
       if (ready) {
         node.status = 'ready';
